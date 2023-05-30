@@ -1,1 +1,2 @@
-# osTicket-Prerequisites-and-Installation
+
+![alt text](https://i.imgur.com/peligtC.png)
