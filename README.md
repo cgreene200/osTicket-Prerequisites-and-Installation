@@ -1,7 +1,7 @@
 
 ![alt text](https://i.imgur.com/peligtC.png)
 
-## **osTicket Project**:
+# **osTicket Project**:
 ## In this project I will be able to walk-through and document the installation of an open-source, web-based helpdesk ticketing system in a Microsoft Azure virtual environment.
 ## I will learn how to use osTicket as, an administrator, a helpdesk technician and as a customer.
 
