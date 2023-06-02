@@ -31,8 +31,9 @@
 ![alt text](https://i.imgur.com/zFpG2Kq.png)
 ### Click on "Internet Information Services" (IIS), as shown below.
 ![alt text](https://i.imgur.com/2QfELPc.png)
+### Click on "World Wide Web Services", as shown below.
 ![alt text](https://i.imgur.com/jRr9Vt9.png)
-
+### Click on "Application Development Features" and select "CGI", as shown below.
 ![alt text](https://i.imgur.com/ggFws5N.png)
 ### Enabling CGI, allows the installation of PHP Manager.
 
