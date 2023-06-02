@@ -123,6 +123,108 @@ First: Click on VM-osTicket / Second: Click on Restart
 ### Next....Restart IIS server again!
 
 ### Next....Test the "osTicket" webpage to see if it launches.
-### (from the left) Click on **Site**, **Default Web Site** and select **osTicket**. Then (from the right) click on **Browse*;80**, as shown below.
+### (from the left) Click on **Site**, **Default Web Site** and select **osTicket**. Then (from the right) click on **Browse*:80(http)**, as shown below.
 
 ![alt text](https://i.imgur.com/QNlnG9V.png)
+
+### After clicking on "Browse*:80(http)", if you see the osTicket webpage image below, your configurations so far, are correct. If you "DO" see errors at this point, you must start troubleshooting.
+
+![alt text](https://i.imgur.com/clQ8Ffe.png)
+
+Next....Enable a few extensions in IIS. Search for **IIS**, click on **Site**, **Default Web Site** and **osTicket**. **PHP Manager** and scroll down to **PHP Extensions** and click on **Enable or disable an extension** as shown below.
+
+![alt text](https://i.imgur.com/2xdABgT.png)
+
+### Extensions that need to be enabled:  (Afterwards, refresh the webpage)
+** php_imap.dll   
+** php_intl.dll
+** php_opcache.dll
+
+#### Click on listed extensions and move to the **right** to click on **Enable**, as shown below.
+
+![alt text](https://i.imgur.com/HPTAalY.png)
+
+Next....Edit the "ost-sampleconfig.php" file, located using the following path:
+### C:\inetpub\wwwroot\osTicket\include
+### Find the file **ost-sampleconfig.php** and change it to **ost-config.php**
+
+### Next....Set Permissions on the **ost-config.php** file so "everyone" has full access.
+Right-click on this file -> go down to "Properties" -> click on "Security" -> Click on
+"Advanced" and then click on "Disable Inheritance" and then "Remove all inherite permisions from this object".
+Now click on "Add" to add a permission. Enter "Everyone", as shown below:
+
+![alt text](https://i.imgur.com/OTYlhvt.png)
+
+### Hit "OK" and give them "Full Control".  Then, hit "Apply" -> "OK" and then "OK".
+
+### Next....Continue configuring "osTicket" in the browser, fictitious information will be used, as shown below.
+
+![alt text](https://i.imgur.com/XQYhKBe.png)
+* **Helpdesk Name:**  John Doe's Helpdesk
+* **Default Email:**  JD@helper.com
+
+
+![alt text](https://i.imgur.com/TEzkt8C.png)
+* **First Name:**  John
+* **Last Name:**   Doe
+* **Email Address:**  JD@helper.com
+* **Uername:**     dj
+* **Password:**    (create your own)
+* **Retype Password:
+
+### Next....Before we can configure the "Database Settings" below, we must first install "HeidiSQL". (HeidiSQL is a database client for MySQL) and allows us to connect to the SQL server that osTicket is going to use.
+
+![alt text](https://i.imgur.com/gio1EQd.png)
+
+### Next....Install "HeidiSQL Setup"
+
+
+![alt text](https://i.imgur.com/I3bkNRg.png)
+
+![alt text](https://i.imgur.com/4yHtlCr.png)
+
+
+![alt text](https://i.imgur.com/BJ8bGgV.png)
+### Select "New" to create a new database, as shown above.
+
+![alt text](https://i.imgur.com/mhCijTA.png)
+### This is the password that we setup when we installed "MySQL"
+### Apply that password and then hit "Open", as shown above.
+
+
+![alt text](https://i.imgur.com/2rPrK3d.png)
+### Now, we can see our "mysql" server, as shown above.
+
+### Next....We need to fill out the remainder of the "osTicket" Database Settings: As shown below.
+![alt text](https://i.imgur.com/NFZS5tr.png)
+
+### **MySQL Username:**  root
+### **MySQL Password:**  (This password was created in MySQL)
+### **MySQL Database:**  (Please Pay Attention Here!)
+### This database must be created in "HeidiSQL", as shown below.
+
+![alt text](https://i.imgur.com/CoFKa2x.png)
+
+![alt text](https://i.imgur.com/u1U6P5A.png)
+
+### Give this new database the name "osTicket", as shown above.
+
+
+![alt text](https://i.imgur.com/L0XDODH.png)
+### We see above that "osTicket" was created without any errors!!!
+### Next....Now, we can add the "MySQL Database" to "osTicket" Database Settings, as shown below:
+
+![alt text](https://i.imgur.com/Rc0zcqM.png)
+### Next....Finish installing osTicket by clicking on "Install Now".
+
+
+![alt text](https://i.imgur.com/6EZf60n.png)
+
+### Congratulations!!........osTicket installed without any errors!!
+
+### One last thing!!!...we have to go back into the "osTicket" folder and delete a folder called "Setup".
+### Here's the path again!  C:\inetpub\wwwroot\osTicket
+### Find the "Setup" folder and delete it.
+
+### Lastly, we need to find the "ost-config.php" file and set the permissions back to "read only".
+### The path to this file is: C:\inetpub\wwwroot\osTicket\include
