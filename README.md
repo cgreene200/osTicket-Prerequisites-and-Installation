@@ -24,19 +24,23 @@
 * Windows 10
 ## **Start the Process of Installing osTicket**
 
-### Enable IIS and World Wide Web Services, as shown below.
+### Enable IIS, World Wide Web Services and CGI, as shown below.
+### Go to the "Control Panel" and click on "Programs", as shown below.
+![alt text](https://i.imgur.com/EUfrVXm.png)
+### Click on "Turn Windows Features on and off", as shown below.
+![alt text](https://i.imgur.com/zFpG2Kq.png)
+### Click on "Internet Information Services" (IIS), as shown below.
+![alt text](https://i.imgur.com/2QfELPc.png)
+![alt text](https://i.imgur.com/jRr9Vt9.png)
 
-![alt text](https://i.imgur.com/WrSuqfS.png)
+![alt text](https://i.imgur.com/ggFws5N.png)
+### Enabling CGI, allows the installation of PHP Manager.
 
-### Enable CGI (which allows the installation of PHP Manager)
-
-![alt text](https://i.imgur.com/pJPlSlB.png)
-
-Next...Lets test to see if our web server is working correctly by opening a browser and adding "127.0.0.1" (localhost IP address): as shown below
+### Next...Lets test to see if our web server is working correctly by opening a browser and adding "127.0.0.1" (localhost IP address): as shown below
 
 ![alt text](https://i.imgur.com/dFH4dW3.png)
 
-If you see the above page, IIS is working fine and webpages are loading correctly.
+### If you see the above page, IIS is working fine and webpages are loading correctly.
 
 ### Next....Install PHP Mamager For IIS: 
 
@@ -79,13 +83,13 @@ If you see the above page, IIS is working fine and webpages are loading correctl
 * Then start installing osTicket
 ### Next....Open IIS as admin
 
-![alt text](https://i.imgur.com/6lEth9p.png)
+![alt text](https://i.imgur.com/TDQMmTF.png)
 
 ### Click on "PHP Manager", as shown above.
 
-![alt text](https://i.imgur.com/3HndNaC.png)
+![alt text](https://i.imgur.com/LnQZxRT.png)
 
-### Click on "PHP is not enabled. Register new PHP version to enable PHP via FastCGI", as shown above.
+### Click on "Register new PHP version", as shown above.
 
 ### Next....Must provide the path to find the "php executable file" called **php-cgi.ext**, as shown below.
 
@@ -108,7 +112,7 @@ If you see the above page, IIS is working fine and webpages are loading correctl
 ![alt text](https://i.imgur.com/AuXJq7B.png)
 
 ### How to Restart the IIS Server?
-First: Click on VM-osTicket / Second: Click on Restart 
+### First: Click on VM-osTicket / Second: Click on Restart 
 
 ### Next....Install osTicket
 
@@ -136,22 +140,24 @@ Next....Enable a few extensions in IIS. Search for **IIS**, click on **Site**, *
 ![alt text](https://i.imgur.com/2xdABgT.png)
 
 ### Extensions that need to be enabled:  (Afterwards, refresh the webpage)
-** php_imap.dll   
-** php_intl.dll
-** php_opcache.dll
+* php_imap.dll
+* php_intl.dll
+* php_opcache.dll
 
 #### Click on listed extensions and move to the **right** to click on **Enable**, as shown below.
 
 ![alt text](https://i.imgur.com/HPTAalY.png)
 
-Next....Edit the "ost-sampleconfig.php" file, located using the following path:
+### Next....Edit the "ost-sampleconfig.php" file, located using the following path:
 ### C:\inetpub\wwwroot\osTicket\include
 ### Find the file **ost-sampleconfig.php** and change it to **ost-config.php**
 
 ### Next....Set Permissions on the **ost-config.php** file so "everyone" has full access.
-Right-click on this file -> go down to "Properties" -> click on "Security" -> Click on
-"Advanced" and then click on "Disable Inheritance" and then "Remove all inherite permisions from this object".
-Now click on "Add" to add a permission. Enter "Everyone", as shown below:
+
+**Right-click on this file -> go down to "Properties" -> click on "Security" -> Click on**
+**"Advanced" and then click on "Disable Inheritance" and then "Remove all inherite permisions from this object".**
+
+### Now click on "Add" to add a permission. Enter "Everyone", as shown below:
 
 ![alt text](https://i.imgur.com/OTYlhvt.png)
 
@@ -203,7 +209,7 @@ Now click on "Add" to add a permission. Enter "Everyone", as shown below:
 ### **MySQL Database:**  (Please Pay Attention Here!)
 ### This database must be created in "HeidiSQL", as shown below.
 
-![alt text](https://i.imgur.com/CoFKa2x.png)
+![alt text](https://i.imgur.com/9RNhydj.png)
 
 ![alt text](https://i.imgur.com/u1U6P5A.png)
 
